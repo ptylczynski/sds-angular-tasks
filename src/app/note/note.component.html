@@ -1,0 +1,21 @@
+<div>
+    <ul >
+        <li *ngFor="let n of notes">
+          <button type="button" (click)="onSelect(n)">
+            <span class="name">{{n.text}} // </span>
+            <span class="name">{{n.date}} </span>
+          </button>
+        </li>
+    </ul>
+</div>
+
+<div *ngIf="selectedNote">
+    <h2>{{selectedNote.text}} Details: </h2>
+    <div>id: {{selectedNote.id}}</div>
+    <div>
+        <label for="note-name">Note text: </label>
+        <input id="note-name" [(ngModel)]="selectedNote.text" placeholder="text"> <br>
+        <label for="note-date">Note date: </label>
+        <input id="note-date" [(ngModel)]="selectedNote.date" placeholder="text"> <br>
+    </div>
+  </div>
